@@ -1,0 +1,289 @@
+@import url("./grid.css");
+@import url("./color.css");
+@import url("./spacing.css");
+@import url("./font.css");
+@import url("./animation.css");
+
+/* -------- */
+/* override */
+/* -------- */
+input[type=text], select {
+    color: var(--dark-font);
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius-norm);
+    box-sizing: border-box;
+}
+
+input[type=number], select {
+    width: 100%;
+    padding: 6px 6px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius-norm);
+    box-sizing: border-box;
+}
+
+input:focus {
+    border: 2px solid var(--green);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: fade(gray, 35%); 
+    border-radius: 12px;
+    /* width: 1rem; */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: transparent; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    width: 200px;
+    background: red;
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style-type:none;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+            
+    padding: 0;
+    margin: 0;
+    position: relative;
+    background-color: var(--blue);
+}
+
+
+/* ---------------- */
+/* ---- body ------ */
+/* ---------------- */
+.body-container {
+    display: block;
+    margin: 0 auto 0 auto;
+    color: var(--white);
+    width: 100%;
+    min-height: 100vh;
+}
+
+.container {
+    position: relative;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-color: var(--blue);
+}
+
+.searh-divider {
+    width: 100vw;
+    position: fixed;
+    top: 120px;
+    z-index: 1041;
+}
+
+.search-container {
+    top: 20vh;
+    padding: 2rem 0;
+    min-height: 40vh;
+    max-width: 700px;
+}
+
+.search-container > form {
+    width: 100%;
+}
+
+.flex-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 5px;
+}
+
+.search-subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 20px 0 40px 0;
+}
+
+#form {
+    text-align: center;
+    grid-column: span 5;
+    max-width: 700px;
+}
+
+.search-input {
+    height: 50px;
+    max-width: 70vw;
+    font-size: 1.4rem;
+}
+
+.search-icon {
+    position: relative;
+    top: -3.2rem;
+    left: 46%;
+    height: 2.5rem;
+}
+
+.search-icon:hover {
+    background-color: rgb(226, 226, 226);
+    border-radius: 50%;
+}
+
+/* ----------- */
+/* result page */
+/* ----------- */
+.search-result {
+    padding-left: 3rem;
+    padding-top: 2rem;
+    background-color: white;
+    color: var(--dark-font);
+    display: block;
+    margin: 0 auto 0 auto;
+    width: 100%;
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+.search-container-result {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+
+    padding: 1rem 2rem 2rem 2rem;
+    /* padding: 2rem;
+    padding-left: 3rem; */
+    height: 100px;
+}
+
+.result-container {
+    margin-left: 6%;
+    max-width: 750px;
+    position: relative;
+    top: 140px;
+}
+
+.result-item {
+    padding-bottom: 2.5rem;
+}
+
+.search-title-result {
+    font-size: 2rem;
+    margin: 0 2rem;
+    padding-top: .6rem;
+    grid-column: span 1;
+}
+
+.result-title {
+    font-size: 1.8rem;
+    text-overflow: ellipsis;
+    color: rgb(63, 131, 180);
+    margin-bottom: .5rem;
+}
+
+.result-content {
+    max-width: 750px;
+    height: 5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: .8rem;
+}
+
+.result-pages {
+    position: relative;
+    top: 100px;
+    margin: 60px auto 200px 100px;
+    max-width: 70%;
+    min-height: 50px;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+}
+
+.page-item {
+    margin: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--border-radius-lg);
+    background-color: var(--blue);
+    cursor: pointer;
+    padding: .6rem;
+    color: var(--white);
+}
+
+.page-title {
+    margin: 1.4rem 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+/* ---------------- */
+/* --- mobile ----- */
+/* ---------------- */
+@media screen and (max-width: 560px){
+    #form {
+        padding-left: 2rem;
+    }
+
+    .search-icon {
+        position: relative;
+        height: 2.5rem;
+        top: -3rem;
+        left: 42%;
+    }
+
+    .search-result {
+        padding-left: 2rem;
+    }
+
+    .result-container {
+        max-width: 70vw;
+        margin-left: 0;
+    }
+
+    .search-title-result {
+        padding: 0;
+        grid-column: span 12;
+    }
+    
+    .search-container-result {
+        padding: 2rem;
+        height: 10vh;
+        grid-column: span 12;
+    }
+
+    #form {
+        text-align: center;
+        grid-column: span 12;
+        max-width: 80vw;
+    }
+}

@@ -1,0 +1,20 @@
+:root {
+    --blue: rgb(4, 115, 192);
+    --white: #ffffff; 
+    --space: white;
+    --space-dark: #282c34;
+    --secondary-space: #3a3f4e;
+    --violet: rgb(156, 59, 248);
+    --orange: rgb(249, 162, 0);
+    --green: rgb(5, 78, 6);
+    --green-secondary: rgb(32, 190, 35);
+    --yellow: rgb(255, 255, 84);
+    --red: red;
+    --grey: rgb(145, 145, 145);
+    --grey-border: rgb(195, 195, 195);
+    --whitesmoke: whitesmoke;
+
+    /* font */
+    --white-font: white;
+    --dark-font: rgb(145, 145, 145);
+}

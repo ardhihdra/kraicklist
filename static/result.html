@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/index.css">
+    <title>KraickList - Find Your Needs Here</title>
+</head>
+
+<body>
+    <div class="body-container">
+        <div id="home" class="container search-container-result ds-row fade-in">
+            <div id="title" class="search-title-result"><a href="/">KraickList</a></div>
+            <form id="form" autocomplete="off">
+                <input class="search-input-result" type="text" id="query" name="query" placeholder="Find Your Needs Here...">
+                <image id="search-icon" src="./search.png" class="search-icon" />
+            </form>
+        </div>
+        <hr class="searh-divider" />
+        <div id="searchResult" class="search-result" >
+            <ul id="resultList" class="result-container">
+                {{range .Records}}
+                <div class="result-item">
+                    <div class="result-title"><a href="{{.ThumbURL}}" target="_blank">{{.Title}}</a></div>
+                    <div class="result-content">{{.Content}}</div>
+                    <div class="result-detail">{{.Tags}}</div>
+                </div>
+                {{end}}
+            </ul>
+            <div id="result-pages" class="result-pages">
+                <div class="page-title">Page</div>
+                {{range .Pagecount}}
+                    <div class="page-item">{{.}}</div>
+                {{end}}
+            </div>
+        </div>
+        <script src="./controller.js" type="text/javascript"></script>
+    </div>
+    <script>
+        const form = document.getElementById("form");
+        const pages = document.getElementsByClassName("page-item");
+        const searchIcon = document.getElementById("search-icon");
+        form.addEventListener("submit", Controller.openSearch);
+        searchIcon.addEventListener("click", Controller.openSearch);
+        for(let pg of pages) {
+            pg.addEventListener("click", Controller.openPage);
+        }
+    </script>
+</body>
+
+
+</html>
