@@ -41,13 +41,13 @@ func (s *Searcher) Load(filepath string) error {
 	return nil
 }
 
+func (s *Searcher) SetRecords(rec []Record) {
+	var records []Record
+	records = append(records, rec...)
+	s.records = records
+}
+
 func (s *Searcher) Search(query string) ([]Record, error) {
-	// var result []Record
-	// for _, record := range s.records {
-	// 	if strings.Contains(record.Title, query) || strings.Contains(record.Content, query) {
-	// 		result = append(result, record)
-	// 	}
-	// }
 	ch := make(chan []Record)
 	go searchContains(ch, s, "title", query)
 	go searchContains(ch, s, "content", query)

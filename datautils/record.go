@@ -17,7 +17,7 @@ func (r *Record) getItem(item string) string {
 		res = r.Title
 	case "content":
 		res = r.Content
-	case "thubmURL":
+	case "thumbURL":
 		res = r.ThumbURL
 	}
 	return res

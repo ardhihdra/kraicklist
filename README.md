@@ -1,5 +1,24 @@
 # KraickList
 
+## Improvement On Kraicklist (<6 days deadline with currently fulltime jobs 🥲)
+see live version -> https://kraicklist-ardhi.herokuapp.com 
+1. improve overall UI/UX, (I think it's important, don't cover a book by its cover is hard :smile:), 
+2. improve query search prioritize, most match with the title is prioritized. then match with content, then other stuff like thumbnail or any useful information
+3. also add some concurrency 👍
+4. refactor overall apps structure
+5. add some basic css, refactor js, add golang's html/template 
+5. add some initial testing 🧪
+
+
+future works: 
+1. work more on search matching, apply more algorithm
+2. work on search by image, work on empty result
+3. work on peek search result detail before go into the full detail. so user could decide wether to read more or not
+4. add last search (some cookies perhaps)
+5. deploy on AWS!! (idk why, its just looks cool lol, I mean performance & reliability wont be an issue here, so Heroku is fine~)
+
+## Challange Description
+
 Welcome to Haraj take home challenge!
 
 In this repository you will find simple web app for fictional startup called KraickList. This app will allow users to search ads from given sample data located in `data.gz`.

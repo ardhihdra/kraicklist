@@ -58,7 +58,7 @@ func handleSearch(s *datautils.Searcher) http.HandlerFunc {
 				return
 			}
 			pageNum, _ := strconv.ParseUint(r.URL.Query().Get("p"), 10, 8)
-			var recordData, pageCount = paginateRecord(records, pageNum)
+			recordData, pageCount := paginateRecord(records, pageNum)
 
 			responseData := datautils.Page{Title: "search", Records: recordData, Pagecount: pageCount}
 			renderTemplate(w, "result", &responseData)
@@ -76,14 +76,6 @@ func renderTemplate(w http.ResponseWriter, tmpl string, p *datautils.Page) {
 }
 
 func paginateRecord(records []datautils.Record, pageNum uint64) ([]datautils.Record, []uint64) {
-	// var pages [][]datautils.Record
-	// pageCount := 0
-	// for i := 0; i < len(records); i++ {
-	// 	pages[pageCount] = append(pages[pageCount], records[i])
-	// 	if pageCount != 0 && pageCount%10 == 0 {
-	// 		pageCount++
-	// 	}
-	// }
 	numOfShow := uint64(5)
 	if len(records) < 5 {
 		numOfShow = uint64(len(records))
